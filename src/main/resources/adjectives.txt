@@ -1,0 +1,242 @@
+accueillant
+adorable
+alourdi
+attrayant
+beau / belle
+carré
+confiante en elle-même
+confiant en lui-même
+costaud / costaude
+crasseux / crasseuse
+désillusionné
+droit
+dynamique
+élégant
+énervé
+gai
+gentil / gentille
+grand
+gros / grosse
+hideux / hideuse
+hirsute
+inquiet / inquiète
+magnifique
+maigre
+maladroit
+merveilleux / merveilleuse
+mince
+nerveux / nerveuse
+offensé
+parfait
+plaisant
+propre
+qui donne la chair de poule
+ravissant
+réfléchi
+sale
+sauvage
+séduisant
+snob
+sombre
+souriant
+splendide
+svelte
+tendu
+terne / fade
+timide
+trompeur / trompeuse
+vif / vive
+vivace
+agressif / agressive
+ambitieux / ambitieuse
+amusé
+avare
+brave
+brillant
+calme
+chaleureux / chaleureuse
+combatif / combative
+coopératif / coopérative
+cruel / cruelle
+dangereux / dangereuse
+débile
+désagréable
+déterminé
+diligent
+dominant
+doué
+égoïste
+entraînant
+farfelu
+fatigant
+fourbe
+franc / franche
+généreux / généreuse
+harmonieux / harmonieuse
+hésitant
+hypocrite
+impartial / impartiale
+instinctif / instinctive
+intrépide
+jaloux / jalouse
+lâche
+loufoque
+mauvais
+mystérieux / mystérieuse
+placide
+plaisant
+ponctuel / ponctuelle
+posé
+protecteur / protectrice
+qui a du succès
+regardant
+sage
+scélérat
+serviable
+sincère
+solitaire
+spirituel / spirituelle
+talentueux / talentueuse
+truculent
+vilain
+vorace
+amoureux / amoureuse
+anxieux / anxieuse
+beau / belle
+bourru
+calme
+choqué
+coquin
+coupable
+débordé
+dégoûté
+déprimé
+dérangé
+douloureux / douloureuse
+effrayé
+en colère
+ennuyé
+envieux / envieuse
+épuisé
+exaspéré
+extatique
+fâché
+fatigué
+faux / fausse
+fidèle
+fier / fière
+fourbe
+frustré
+gai
+gêné
+gentil / gentille
+heureux / heureuse
+honteux / honteuse
+horrible
+hystérique
+indisposé
+jovial / joviale
+las / lasse
+malade
+malicieux / malicieuse
+mature
+mauvais
+méchant
+pacifique
+peiné
+perplexe
+perturbé
+plein d'espoir
+prétentieux / prétentieuse
+prudent
+rieur rieuse
+solitaire
+soucieux
+souffrant
+soupçonneux
+sûr de soi
+timide
+tranquille
+triste
+troublé
+altéré
+carré
+circulaire
+creux / creuse
+décomposé
+déformé
+droit
+étroit
+géométrique
+large
+long / longue
+maigre
+plat
+primitif / primitive
+raide
+rectangulaire
+rond
+simple
+tordu
+triangulaire
+vaste
+accidenté
+collant
+doux / douce
+dur
+éparpillé
+ferme
+glissant
+inégal / inégale
+moelleux / moelleuse
+mou / molle
+mouillé
+piquant
+pointu
+qui se défait
+sableux / sableuse
+sec / sèche
+souple
+tendre
+tranchant
+argenté
+azuré
+blanc / blanche
+bleu
+blond
+brun
+châtain
+cyan
+grenat
+magenta
+marron
+noir
+orange
+pourpré
+rose
+roux / rousse
+turquoise
+vert
+violet / violette
+antique
+avancé
+bref / brève
+contemporain
+d'aujourd'hui
+hebdomadaire
+jeune
+journalier / journalière
+lent
+mensuel / mensuelle
+moderne
+neuf neuve
+nouveau / nouvelle
+précipité
+prompt
+rapide
+récent
+séculaire
+tardif / tardive
+trimestriel / trimestrielle
+vétuste
+vieux / vieille
