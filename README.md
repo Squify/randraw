@@ -5,6 +5,9 @@ Pour se faire, nous avons choisi de créer un jeu solo qui peut être joué par 
 Le jeu va générer un couple "nom commun" + "adjectif". Le joueur dispose d'une zone de dessin et d'outils pour réaliser le mot formé précédemment. 
 L'utilisateur a la possibilité d'enregistré son dessin à tout moment.
 
+## Release
+[Accéder aux releases](https://gitlab.com/java_cours_l3/randraw/-/releases).
+
 ## Requis
 - Java 8
 
