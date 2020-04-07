@@ -6,15 +6,17 @@ import lombok.RequiredArgsConstructor;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
 import java.awt.geom.Ellipse2D;
 import java.awt.image.BufferedImage;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class DrawingPanel extends JPanel {
 
-    private final Random rnd = new Random();
     private final DrawSettings drawSettings;
 
     @Getter
@@ -26,7 +28,20 @@ public class DrawingPanel extends JPanel {
         this.setBackground(Color.WHITE);
         this.setForeground(Color.WHITE);
         this.setPreferredSize(new Dimension(600, 450));
-
+        this.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                Point clickPoint = e.getPoint();
+                if (drawSettings.getTool() == DrawSettings.Tool.BUCKET) {
+                    int targetColor = drawingImage.getRGB(clickPoint.x, clickPoint.y);
+                    int replacementColor = drawSettings.getColor().getRGB();
+                    bucketFill(clickPoint.x, clickPoint.y, targetColor, replacementColor);
+                }
+                else {
+                    addShape(clickPoint);
+                }
+            }
+        });
         this.addMouseMotionListener(new MouseMotionAdapter() {
             @Override
             public void mouseDragged(MouseEvent e) {
@@ -44,10 +59,42 @@ public class DrawingPanel extends JPanel {
     }
 
     public void addShape(Point clickPoint) {
-        ShapeWrapper shape = buildShape(clickPoint);
-        drawing.setColor(shape.getColor());
-        drawing.fill(shape.getShape());
+        if (drawSettings.getTool() != DrawSettings.Tool.BUCKET) {
+            ShapeWrapper shape = buildShape(clickPoint);
+            drawing.setColor(shape.getColor());
+            drawing.fill(shape.getShape());
+            SwingUtilities.invokeLater(this::repaint);
+        }
+    }
+
+    private void bucketFill(int x, int y, int targetColor, int replacementColor) {
+        if (targetColor == replacementColor) return;
+        drawingImage.setRGB(x, y, replacementColor);
+        List<Long> pixels = new ArrayList<>(512);
+        pixels.add(node(x, y));
+
+        long node;
+        int nodeX;
+        int nodeY;
+
+        while(!pixels.isEmpty()) {
+            node = pixels.remove(0);
+            nodeX = nodeX(node);
+            nodeY = nodeY(node);
+            processNode(nodeX-1, nodeY, targetColor, replacementColor, pixels);
+            processNode(nodeX+1, nodeY, targetColor, replacementColor, pixels);
+            processNode(nodeX, nodeY-1, targetColor, replacementColor, pixels);
+            processNode(nodeX, nodeY+1, targetColor, replacementColor, pixels);
+        }
         SwingUtilities.invokeLater(this::repaint);
+    }
+
+    private void processNode(int x, int y, int targetColor, int replacementColor, List<Long> pixels) {
+        if (x < 0 || y < 0 || x >= drawingImage.getWidth() || y >= drawingImage.getHeight()) return;
+        if(drawingImage.getRGB(x, y) == targetColor) {
+            drawingImage.setRGB(x, y, replacementColor);
+            pixels.add(node(x, y));
+        }
     }
 
     public void clearShapes() {
@@ -73,5 +120,17 @@ public class DrawingPanel extends JPanel {
     public static class ShapeWrapper {
         private final Shape shape;
         private final Color color;
+    }
+
+    private static long node(int x, int y) {
+        return (long) x | ((long) y) << 32;
+    }
+
+    private static int nodeX(long node) {
+        return (int) (node & 0xffff);
+    }
+
+    private static int nodeY(long node) {
+        return (int) ((node >> 32) & 0xffff);
     }
 }

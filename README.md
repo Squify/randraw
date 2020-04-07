@@ -11,7 +11,7 @@ L'utilisateur a la possibilité d'enregistré son dessin à tout moment.
 ## Compilation
 ### Requis
 - Maven
-```java
+```console
 mvn clean package
 ```
 

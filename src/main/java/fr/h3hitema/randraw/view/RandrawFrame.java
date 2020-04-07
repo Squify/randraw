@@ -29,6 +29,11 @@ public class RandrawFrame extends JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setContentPane(buildPane());
         this.setJMenuBar(buildMenuBar());
+        try {
+            this.setIconImage(ImageIO.read(getClass().getResourceAsStream("/img/favicon.png")));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         this.pack();
         this.setLocationRelativeTo(null);
         this.setVisible(true);
