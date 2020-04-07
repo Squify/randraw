@@ -35,7 +35,7 @@ public class ToolSizeButton extends ToolButton {
         this.sliderDialog.pack();
 
         this.addActionListener(action -> {
-            if(!sliderDialog.isVisible()) {
+            if (!sliderDialog.isVisible()) {
                 sliderDialog.setLocationRelativeTo(this);
                 sliderDialog.setVisible(true);
             }

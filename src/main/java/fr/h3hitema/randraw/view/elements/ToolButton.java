@@ -4,7 +4,6 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
-import java.io.IOException;
 
 public class ToolButton extends JButton {
 
@@ -20,7 +19,7 @@ public class ToolButton extends JButton {
     public ToolButton(String name) {
         this();
         try {
-            Image img = ImageIO.read(getClass().getResourceAsStream("/img/buttons/"+name+".png"));
+            Image img = ImageIO.read(getClass().getResourceAsStream("/img/buttons/" + name + ".png"));
             this.setIcon(new ImageIcon(img));
         } catch (Throwable e) {
             e.printStackTrace();

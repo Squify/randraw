@@ -6,15 +6,10 @@ import lombok.RequiredArgsConstructor;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
 import java.awt.geom.Ellipse2D;
-import java.awt.geom.Line2D;
 import java.awt.image.BufferedImage;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashSet;
 import java.util.Random;
 
 public class DrawingPanel extends JPanel {
@@ -35,7 +30,7 @@ public class DrawingPanel extends JPanel {
         this.addMouseMotionListener(new MouseMotionAdapter() {
             @Override
             public void mouseDragged(MouseEvent e) {
-                if(SwingUtilities.isLeftMouseButton(e)) {
+                if (SwingUtilities.isLeftMouseButton(e)) {
                     addShape(e.getPoint());
                 }
             }
@@ -68,12 +63,13 @@ public class DrawingPanel extends JPanel {
             color = getForeground();
             diam *= 1.5;
         }
-        double xPos = clickPoint.getX() - (diam/2);
-        double yPos = clickPoint.getY() - (diam/2);
+        double xPos = clickPoint.getX() - (diam / 2);
+        double yPos = clickPoint.getY() - (diam / 2);
         return new ShapeWrapper(new Ellipse2D.Double(xPos, yPos, diam, diam), color);
     }
 
-    @RequiredArgsConstructor @Getter
+    @RequiredArgsConstructor
+    @Getter
     public static class ShapeWrapper {
         private final Shape shape;
         private final Color color;

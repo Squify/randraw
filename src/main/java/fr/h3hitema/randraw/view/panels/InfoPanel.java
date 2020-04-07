@@ -4,8 +4,6 @@ import fr.h3hitema.randraw.Texts;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -23,7 +21,7 @@ public class InfoPanel extends JPanel {
         nameField.setPreferredSize(new Dimension(200, 25));
         adjectifField.setPreferredSize(new Dimension(200, 25));
         randomBtn.addActionListener(a -> {
-            if(currentAnimation != null) return;
+            if (currentAnimation != null) return;
             randomBtn.setEnabled(false);
             drawingPanel.clearShapes();
             currentAnimation = new Thread(() -> {
@@ -38,12 +36,12 @@ public class InfoPanel extends JPanel {
                 int time = 0;
                 int cpt = 0;
 
-                while(time < duration2) {
+                while (time < duration2) {
                     String name = names.get(cpt % names.size());
                     String adjective = adjectives.get(cpt % adjectives.size());
                     int finalTime = time;
                     SwingUtilities.invokeLater(() -> {
-                        if(finalTime < duration) {
+                        if (finalTime < duration) {
                             nameField.setText(name);
                         }
                         adjectifField.setText(adjective);
@@ -51,7 +49,7 @@ public class InfoPanel extends JPanel {
                     time += pauseTime;
                     cpt++;
                     try {
-                        Thread.sleep(pauseTime-15);
+                        Thread.sleep(pauseTime - 15);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }

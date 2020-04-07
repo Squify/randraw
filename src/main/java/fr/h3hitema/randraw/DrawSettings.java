@@ -1,7 +1,6 @@
 package fr.h3hitema.randraw;
 
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 import java.awt.*;

@@ -22,7 +22,7 @@ public class RandrawFrame extends JFrame {
     }
 
     private final DrawSettings drawSettings = new DrawSettings();
-    private final DrawingPanel drawingPanel = new DrawingPanel(drawSettings);;
+    private final DrawingPanel drawingPanel = new DrawingPanel(drawSettings);
 
     public RandrawFrame() {
         this.setTitle("Randraw, it's fun");
